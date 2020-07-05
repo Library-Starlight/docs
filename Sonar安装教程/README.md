@@ -18,15 +18,15 @@ Sonar是一款[开源](https://github.com/SonarSource/sonarqube)、跨平台的�
 * [运行环境要求](#运行环境要求)
 * [Windows系统下Sonar服务器的安装](#Windows系统下Sonar服务器的安装)
 * [SQL Server数据库的配置](#SQL-Server数据库的配置)
-* [分析 .NET Framework项目](#分析-\.NET-Framework项目)
-* [分析 .NET Core项目](#分析-\.NET-Core项目)
+* [分析 .NET Framework项目](分析-net-framework项目)
+* [分析 .NET Core项目](#分析-net-core项目)
 * [安装汉化插件](#安装汉化插件)
 
 ## 运行环境要求
 
 安装或启动Sonar软件前，需安装必要的运行环境：
 
-* [Java Development Kit(JDK)](#Java-Development-Kit%28JDK%29)
+* [Java Development Kit(JDK)](#java-development-kitjdk)
 * [SQL Server服务器](#SQL-Server服务器)
 
 ### Java Development Kit(JDK)
