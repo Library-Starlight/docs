@@ -118,6 +118,7 @@ Sonar通过MSBuild Scanner命令行工具进行扩展，可分析 .NET Framework
 
 * [下载MSBuild Scanner](https://www.microsoft.com/download/details.aspx?id=53344)，并安装。
 * 将MSBuild Scanner安装目录下的bin文件夹添加到环境变量Path中。
+* 将MSBuild.exe所在目录添加到环境变量Path中。例如，对于Visual Studio 2019 Enterprise，目录为：C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin。
 * 打开命令行工具，cd到待分析的解决方案文件夹下。执行以下命令，以GrpcService项目为例：
     ``` cmd
     SonarScanner.MSBuild.exe begin /k:"GrpcService" 
