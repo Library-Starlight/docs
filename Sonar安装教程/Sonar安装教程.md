@@ -36,8 +36,8 @@ Sonar是一款[开源](https://github.com/SonarSource/sonarqube)、跨平台的�
 
 安装或启动Sonar软件前，需安装必要的运行环境：
 
-* [Java Development Kit(JDK)](#Java\ Development\ Kit(JDK))
-* [SQL Server服务器](#SQL\ Server服务器)
+* [Java Development Kit(JDK)](#Java-Development-Kit(JDK))
+* [SQL Server服务器](#SQL-Server服务器)
 
 ### Java Development Kit(JDK)
 
