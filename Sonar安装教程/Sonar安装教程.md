@@ -1,13 +1,3 @@
----
-title: Sonar安装教程
-author: Jeale Chen
-description: 流行的静态代码扫描软件Sonar的安装和使用说明。
-ms.author: Chen
-ms.custom: sonar
-ms.date: 04/07/2020
-no-loc: [Blazor, "Identity", "Let's Encrypt", Razor, SignalR]
-uid: security/Install Tutorial for Sonar
----
 
 # Sonar安装教程
 
@@ -26,17 +16,17 @@ Sonar是一款[开源](https://github.com/SonarSource/sonarqube)、跨平台的�
 本文参考了[Sonar官方文档](https://docs.sonarqube.org/latest/setup/overview/)和开源社区中对Sonar介绍，以一个习惯使用Windows系统和SQL Server数据库的.NET开发人员的角度，对Sonar组件的安装和使用进行了说明。非.NET开发人员无需担心，因为介绍中并未包含专业的.NET知识。
 
 * [运行环境要求](#运行环境要求)
-* [Windows系统下Sonar服务器的安装、配置](#Windows系统下Sonar服务器的安装、配置)
+* [Windows系统下Sonar服务器的安装](#Windows系统下Sonar服务器的安装)
 * [SQL Server数据库的配置](#SQL-Server数据库的配置)
+* [分析 .NET Framework项目](#分析-\.NET-Framework项目)
+* [分析 .NET Core项目](#分析-\.NET-Core项目)
 * [安装汉化插件](#安装汉化插件)
-* [分析 .NET Framework项目](#分析-.NET-Framework项目)
-* [分析 .NET Core项目](#分析-.NET-Core项目)
 
 ## 运行环境要求
 
 安装或启动Sonar软件前，需安装必要的运行环境：
 
-* [Java Development Kit(JDK)](#Java-Development-Kit(JDK))
+* [Java Development Kit(JDK)](#Java-Development-Kit\(JDK\))
 * [SQL Server服务器](#SQL-Server服务器)
 
 ### Java Development Kit(JDK)
@@ -44,7 +34,7 @@ Sonar是一款[开源](https://github.com/SonarSource/sonarqube)、跨平台的�
 Sonar是基于Java开发的软件，启动时，需要有JDK环境支持。
 
 * 从Oracle官方下载JDK并安装：[jdk-14.0.1_windows-x64_bin.exe](https://www.oracle.com/java/technologies/javase-jdk14-downloads.html#license-lightbox)
-* 将JDK安装路径下的bin文件夹目录添加到环境变量Path中。例如：右键此电脑->属性->高级系统设置->环境变量->选中用户变量Path->编辑->新建C:\Program Files\Java\jdk-14.0.1\bin->确定
+* 将JDK安装路径下的bin文件夹目录添加到环境变量Path中。例如：右键此电脑 -> 属性 -> 高级系统设置 -> 环境变量 -> 选中用户变量Path -> 编辑 -> 新建C:\Program Files\Java\jdk-14.0.1\bin -> 确定
 
 ### SQL Server服务器
 
@@ -97,7 +87,7 @@ Sonar支持在Linux、MacOS、Windows以及Docker环境中运行。
     ALTER DATABASE sonar 
     COLLATE Chinese_PRC_CS_AS;
     ```
-* 打开Sonar安装目录下的conf\sonar.properties文件。
+* 打开Sonar安装目录下的 conf\sonar.properties 文件。
   * 若采用SQL Server 身份验证，则添加如下配置：
     ```
     sonar.jdbc.url=jdbc:sqlserver://localhost;databaseName=sonar;
@@ -107,14 +97,14 @@ Sonar支持在Linux、MacOS、Windows以及Docker环境中运行。
     sonar.login=admin
     sonar.password=admin
     ```
-  * 若采用Windows 身份验证，则需安装[Microsoft SQL JDBC Driver](https://www.microsoft.com/en-us/download/details.aspx?id=57782)，并将该JDBC Driver安装目录下的sqljdbc_7.2\enu\auth\x64\sqljdbc_auth.dll复制到Path环境变量包含的目录下，建议直接将该sqljdbc_7.2\enu\auth\x64\目录的完整访问地址添加到环境Path中。完成后，添加如下配置：
+  * 若采用Windows 身份验证，则需安装[Microsoft SQL JDBC Driver](https://www.microsoft.com/en-us/download/details.aspx?id=57782)，并将该JDBC Driver安装目录下的 sqljdbc_7.2\enu\auth\x64\sqljdbc_auth.dll 复制到Path环境变量包含的目录下，建议直接将该 sqljdbc_7.2\enu\auth\x64 目录的完整访问地址添加到环境Path中。完成后，添加如下配置：
     ```
     sonar.jdbc.url=jdbc:sqlserver://localhost;databaseName=sonar;integratedSecurity=true
     sonar.sorceEncoding=UTF-8
     sonar.login=admin
     sonar.password=admin
     ```
-* 重启Sonar：打开任务管理器->详细信息，将所有java.exe进程结束掉，关闭Sonar。再次双击StartSonar.bat启动Sonar。
+* 重启Sonar：打开 任务管理器 -> 详细信息，将所有java.exe进程结束掉，关闭Sonar。再次双击StartSonar.bat启动Sonar。
     > 注意：未启动其他java程序时，可结束全部java.exe进程，若有其他java程序正在运行，请确保结束掉对应的java.exe进程，防止错误操作导致系统中其他java服务出现异常。
 * 再次打开[Sonar页面](http://localhost:9000)，进入Projects页面，可以看到下面的Embedded database should be used for evaluation purposes only提示消失了。
 
@@ -150,7 +140,7 @@ Sonar提供插件扩展支持，开发人员可通过安装或开发相应的插
 下面，以简体中文汉化插件为例，说明扩展插件的安装和使用。
 
 * [下载汉化插件](https://github.com/SonarQubeCommunity/sonar-l10n-zh/releases/download/sonar-l10n-zh-plugin-8.3/sonar-l10n-zh-plugin-8.3.jar)
-* 将插件放到Sonar安装目录的extensions\plugins文件夹下。
+* 将插件放到Sonar安装目录的 extensions\plugins 文件夹下。
 * 重启Sonar服务。
 
 > 注意：本节中使用8.3版本的汉化插件，对于不同的Sonar版本，建议到[Sonar简体中文开源项目](https://github.com/SonarQubeCommunity/sonar-l10n-zh/releases)中下载对应版本的插件。
