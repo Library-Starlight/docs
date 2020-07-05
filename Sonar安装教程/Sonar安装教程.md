@@ -50,7 +50,7 @@ Sonar支持在Linux、MacOS、Windows以及Docker环境中运行。
 
 * 下载[Sonar社区版本](https://www.sonarqube.org/success-download-community-edition/)，并安装。
 * 在Sonar安装目录下，进入bin\windows-x86-64\目录，双击StartSonar.bat文件启动Sonar服务。以后每次启动Sonar时，都通过该操作来启动。
-* 打开浏览器，进入[http://localhost:9000](http://localhost:9000)，查看Sonar页面。
+* 打开浏览器，进入网站[http://localhost:9000](http://localhost:9000)，查看Sonar页面。
 
 若点击Projects进入项目页面，在下方出现提示：'Embedded database should be used for evaluation purposes only'，即内嵌数据库只能用于测试场景。这是因为还没有配置数据库，Sonar暂时使用功能不足内嵌数据库。下一节中，将配置SQL Server数据库。
 
@@ -116,20 +116,31 @@ Sonar支持在Linux、MacOS、Windows以及Docker环境中运行。
 
 Sonar通过MSBuild Scanner命令行工具进行扩展，可分析 .NET Framework项目。
 
-* [下载MSBuild Scanner]()
+* [下载MSBuild Scanner](https://www.microsoft.com/download/details.aspx?id=53344)，并安装。
 * 将MSBuild Scanner安装目录下的bin文件夹添加到环境变量Path中。
-* 扫描项目
+* 打开命令行工具，cd到待分析的解决方案文件夹下。执行以下命令，以GrpcService项目为例：
+    ``` cmd
+    SonarScanner.MSBuild.exe begin /k:"GrpcService" 
+    MSBuild /t:Rebuild
+    SonarScanner.MSBuild.exe end 
+    ```
+* 扫描完成后，进入Sonar页面下的Projects(项目)标签页，查看GrpcService项目的扫描报告。
 
 ## 分析 .NET Core项目
 
 Sonar通过dotnet scanner命令行工具进行扩展，可分析 .NET Core项目。
-
 * 打开命令行工具，通过以下命令安装dotnet scanner工具：
 
     ``` cmd
-    cmd>dotnet install 
+    dotnet tool install --global dotnet-sonarscanner
     ```
-* 扫描项目
+* 打开命令行工具，cd到待分析的解决方案文件夹下。执行以下命令，以GrpcService项目为例：
+    ``` cmd
+    dotnet sonarscanner begin /k:"GrpcService" 
+    dotnet build
+    dotnet sonarscanner end 
+    ```
+* 扫描完成后，进入Sonar页面下的Projects(项目)标签页，查看GrpcService项目的扫描报告。
 
 ## 安装汉化插件
 
