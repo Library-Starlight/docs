@@ -27,10 +27,10 @@ Sonar是一款[开源](https://github.com/SonarSource/sonarqube)、跨平台的�
 
 * [运行环境要求](#运行环境要求)
 * [Windows系统下Sonar服务器的安装、配置](#Windows系统下Sonar服务器的安装、配置)
-* [SQL Server数据库的配置](#SQL\ Server数据库的配置)
+* [SQL Server数据库的配置](#SQL-Server数据库的配置)
 * [安装汉化插件](#安装汉化插件)
-* [分析 .NET Framework项目](#分析\ .NET\ Framework项目)
-* [分析 .NET Core项目](#分析\ .NET\ Core项目)
+* [分析 .NET Framework项目](#分析-.NET-Framework项目)
+* [分析 .NET Core项目](#分析-.NET-Core项目)
 
 ## 运行环境要求
 
@@ -44,11 +44,13 @@ Sonar是一款[开源](https://github.com/SonarSource/sonarqube)、跨平台的�
 Sonar是基于Java开发的软件，启动时，需要有JDK环境支持。
 
 * 从Oracle官方下载JDK并安装：[jdk-14.0.1_windows-x64_bin.exe](https://www.oracle.com/java/technologies/javase-jdk14-downloads.html#license-lightbox)
-* 将安装路径下的bin文件夹目录添加到环境变量Path中。如：右键此电脑->属性->高级系统设置->环境变量->选中用户变量Path->编辑->新建C:\Program Files\Java\jdk-14.0.1\bin->确定
+* 将JDK安装路径下的bin文件夹目录添加到环境变量Path中。例如：右键此电脑->属性->高级系统设置->环境变量->选中用户变量Path->编辑->新建C:\Program Files\Java\jdk-14.0.1\bin->确定
 
 ### SQL Server服务器
 
-使用Sonar时，需配置数据库，数据库保存了Sonar服务器的用户配置，操作日志，扫描报告等。软件开发人员通常熟悉SQL Server的使用和安装，并且社区中有大量安装教程，因此此处不作说明。
+使用Sonar时，需配置数据库，数据库保存了Sonar服务器的用户配置，操作日志，扫描报告等，使用性能优越的数据库能提高Sonar的性能。
+
+软件开发人员通常熟悉SQL Server的使用和安装，并且社区中有大量安装教程，因此此处不作说明。
 
 ## Windows系统下Sonar服务器的安装
 
