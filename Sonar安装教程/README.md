@@ -7,7 +7,7 @@ By [Jeale Chen](https://github.com/chenjilan123)
 
 代码扫描软件通过对软件项目进行扫描，分析安全性漏洞，代码重复率等进行分析，并提供代码重构建议，生成报告。帮助软件开发人员编写简洁、优质、安全的代码。
 
-## Sonare简介
+## Sonar简介
 
 Sonar是一款[开源](https://github.com/SonarSource/sonarqube)、跨平台的静态代码扫描软件。
 
