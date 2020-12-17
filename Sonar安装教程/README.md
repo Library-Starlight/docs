@@ -7,7 +7,7 @@ By [Jeale Chen](https://github.com/chenjilan123)
 
 代码扫描软件通过对软件项目进行扫描，分析安全性漏洞，代码重复率等，提供重构建议，生成报告。帮助软件开发人员编写简洁、优质、安全的代码。
 
-## Sonare简介
+## Sonar简介
 
 Sonar是一款[开源](https://github.com/SonarSource/sonarqube)、跨平台的静态代码扫描软件。
 
@@ -18,15 +18,15 @@ Sonar是一款[开源](https://github.com/SonarSource/sonarqube)、跨平台的�
 * [运行环境要求](#运行环境要求)
 * [Windows系统下Sonar服务器的安装](#Windows系统下Sonar服务器的安装)
 * [SQL Server数据库的配置](#SQL-Server数据库的配置)
-* [分析 .NET Framework项目](#分析-\.NET-Framework项目)
-* [分析 .NET Core项目](#分析-\.NET-Core项目)
+* [分析 .NET Framework项目](#分析-net-framework项目)
+* [分析 .NET Core项目](#分析-net-core项目)
 * [安装汉化插件](#安装汉化插件)
 
 ## 运行环境要求
 
 安装或启动Sonar软件前，需安装必要的运行环境：
 
-* [Java Development Kit(JDK)](#Java-Development-Kit\(JDK\))
+* [Java Development Kit(JDK)](#java-development-kitjdk)
 * [SQL Server服务器](#SQL-Server服务器)
 
 ### Java Development Kit(JDK)
@@ -118,6 +118,7 @@ Sonar通过MSBuild Scanner命令行工具进行扩展，可分析 .NET Framework
 
 * [下载MSBuild Scanner](https://www.microsoft.com/download/details.aspx?id=53344)，并安装。
 * 将MSBuild Scanner安装目录下的bin文件夹添加到环境变量Path中。
+* 将MSBuild.exe所在目录添加到环境变量Path中。例如，对于Visual Studio 2019 Enterprise，目录为：C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin。
 * 打开命令行工具，cd到待分析的解决方案文件夹下。执行以下命令，以GrpcService项目为例：
     ``` cmd
     SonarScanner.MSBuild.exe begin /k:"GrpcService" 
