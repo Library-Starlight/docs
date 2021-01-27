@@ -34,7 +34,7 @@ Http协议的结构在应用层定义。
 
 ## Http协议简介
 
-Http协议是基于TCP通讯的应用层协议。Http协议定义了Web客户端如何向Web服务端请求并获取数据。
+Http即超文本传输协议(The Hypertext Transport Protocol)，然而，Http协议的应用已远超出了其超文本的传输。Http协议是基于TCP通讯的应用层协议。Http协议定义了Web客户端如何向Web服务端请求并获取数据。
 
 常见的Http客户端有：Web浏览器，[Postman](https://www.postman.com)
 
